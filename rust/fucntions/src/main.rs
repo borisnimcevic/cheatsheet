@@ -11,6 +11,9 @@ fn main() {
     );
     multiply(2, 5);
     println!("multiply2 result = {}", multiply2(2, 4)); // '{}' means print number here
+
+    print!("This will not print a new line");
+    println!(" so this will be on the same line");
 }
 
 fn number() -> u16 {
