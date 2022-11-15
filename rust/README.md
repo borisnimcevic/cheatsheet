@@ -11,3 +11,11 @@ Giving reference to functions:
 fn function_name(variable: String) takes a String and owns it. If it doesn't return anything, then the variable dies inside the function.
 fn function_name(variable: &String) borrows a String and can look at it
 fn function_name(variable: &mut String) borrows a String and can change it
+
+Remember this for match:
+You write match and then make a {} code block.
+Write the pattern on the left and use a => fat arrow to say what to do when it matches.
+Each line is called an "arm".
+Put a comma between the arms (not a semicolon).
+A match statement always stops when it finds a match, and doesn't check the rest.
+A match has to return the same type.
