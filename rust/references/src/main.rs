@@ -21,4 +21,20 @@ fn main() {
     let country_ref = &country; // country_ref is a reference to this data. It's not going to change
     let country = 8; // Now we have a variable called country that is an i8. But it has no relation to the other one, or to country_ref
     println!("{}, {}", country_ref, country); // country_ref still refers to the data of String::from("Austria") that we gave it.
+                                              //
+    let mynum = 3;
+    print_num(mynum);
+    print_num(mynum);
+
+    let country = String::from("Kiribati");
+    prints_country(country.clone());
+    prints_country(country);
+}
+
+fn print_num(num: u8){
+    println!("{}", num);
+}
+
+fn prints_country(country_name: String) {
+    println!("{}", country_name);
 }
