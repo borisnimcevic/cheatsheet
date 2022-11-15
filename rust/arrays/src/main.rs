@@ -6,29 +6,44 @@
 // T - type of elements
 // N - the number of elements
 
+// * Index numbers start at 0 (not 1)
+// * Index ranges are exclusive (they do not include the last number)
+
 use std::mem;
 
 fn main() {
-    // Two ways to initialize an array:
-    // 1. Manualy set the vaues
     let mut arr1 = [1, 2, 3, 4, 5]; // let the compile determine the type
     let arr2: [i8; 5] = [1, 2, 3, 4, 5]; // specify the type and length
     let arr3 = [1; 10]; // initialize all the data to 1
     let arr4: [i8; 10] = [0; 10]; // specify the type and length
-                                  //
+
     arr1.rotate_left(2);
-    println!("size of arr1 = {arr1:?}");
-    println!("*** Sizes:");
+    println!("arr1 = {arr1:?}");
 
-    println!("size of arr1 = {}", mem::size_of_val(&arr1));
-    println!("size of arr2 = {}", mem::size_of_val(&arr2));
-    println!("size of arr3 = {}", mem::size_of_val(&arr3));
-    println!("size of arr4 = {}", mem::size_of_val(&arr4));
+    println!(
+        "arr1; size = {} , length = {}",
+        mem::size_of_val(&arr1),
+        arr1.len()
+    );
+    println!(
+        "arr2; size = {} , length = {}",
+        mem::size_of_val(&arr2),
+        arr2.len()
+    );
+    println!(
+        "arr3; size = {} , length = {}",
+        mem::size_of_val(&arr3),
+        arr3.len()
+    );
+    println!(
+        "arr4; size = {} , length = {}",
+        mem::size_of_val(&arr4),
+        arr4.len()
+    );
 
-    println!("*** Lengths:");
+    let some_range = &arr2[1..3]; // 3 is exclusive
+    println!("some_range = {:?}", some_range);
 
-    println!("lenght of arr1 = {}", arr1.len());
-    println!("lenght of arr2 = {}", arr2.len());
-    println!("lenght of arr3 = {}", arr3.len());
-    println!("lenght of arr4 = {}", arr4.len());
+    let some_other_range = &arr2[1..=3]; // 3 is inclusive
+    println!("some_other_range= {:?}", some_other_range);
 }
